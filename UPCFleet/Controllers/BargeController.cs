@@ -45,7 +45,7 @@ namespace UPCFleet.Controllers
             //    from m in _context.Transactions
             //   join t in _context.Transfers on m.Transaction1 equals t.Transaction 
             //    select m
-            //).ToList();table
+            //).ToList();
             
             var list = _context.Transactions.ToList();
             var trans = from m in list
