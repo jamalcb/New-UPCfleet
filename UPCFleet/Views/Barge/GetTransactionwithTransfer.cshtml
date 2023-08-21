@@ -1,0 +1,38 @@
+﻿@model IEnumerable<UPCFleet.Models.TransactionViewModel>
+
+@{
+    ViewData["Title"] = "GetTransactionwithTransfer";
+    List < UPCFleet.Models.Transfer > TransList= ViewBag.transfer;
+}
+
+<h1>GetTransactionwithTransfer</h1>
+<div>
+    @foreach (var item in Model)
+    {
+        <h1>Barge Name: @item.Transactions.Barge</h1>
+        <h4>Transaction Id:@item.Transactions.Transaction1</h4>
+        <h4>Barge Size:@item.Barges.Size</h4>
+        <table>
+        <thead>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach(var transfer in item.transfers)
+        {
+            <tr>
+                <td>@transfer.From</td>
+                <td>@transfer.To</td>
+                <td>@transfer.Status</td>
+
+            </tr>
+        }
+        </tbody>
+        </table>
+    }
+</div>
+
+

@@ -1,0 +1,32 @@
+﻿@model List<UPCFleet.Models.Owner>
+@{
+    ViewData["Title"] = "Barge Owner List";
+    List<UPCFleet.Models.Barge> list = ViewBag.bargelist;
+}
+
+<h1>GetBargeOwner</h1>
+<div>
+    @foreach (var items in Model)
+    {
+        <h4>@items.Company</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Barge</th>
+                    <th>Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var barge in list.Where(m => m.Owner == items.Owner1))
+                {
+
+                    <tr>
+                        <td>@barge.Barge1</td>
+                        <td>@barge.Rate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
